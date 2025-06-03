@@ -1,0 +1,11 @@
+streamlit-calendar
+ics
+streamlit
+jq
+pytz
+python-dotenv
+requests
+faiss-cpu
+openai
+langchain
+langchain-text-splitters
