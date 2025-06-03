@@ -8,7 +8,7 @@ import json
 from streamlit_calendar import calendar
 
 # Imports de tes modules
-from scrap_edt import get_edt_semaine_json
+from scrap_edt import get_edt_semaine
 from schedule_functions import (
     load_schedule_data, 
     get_courses_by_date_range, 
@@ -40,7 +40,7 @@ def ensure_schedule_data(user_id):
     if not os.path.exists(json_file):
         st.info(f"📥 Récupération de l'emploi du temps pour {user_id}...")
         try:
-            get_edt_semaine_json(user_id)
+            get_edt_semaine(user_id)
             st.success("✅ Emploi du temps mis à jour !")
             return True
         except Exception as e:
@@ -263,7 +263,7 @@ def main():
             with refresh_col1:
                 if st.button("🔄 Rafraîchir l'emploi du temps"):
                     with st.spinner("Mise à jour en cours..."):
-                        get_edt_semaine_json(user_id)
+                        get_edt_semaine(user_id)
                     st.rerun()
             
             with refresh_col2:

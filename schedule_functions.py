@@ -79,7 +79,7 @@ def get_color_for_course(course_name: str) -> str:
     return "#3788d8"
 
 def get_courses_by_date_range(user_id: str, start_date: str, end_date: str) -> Dict[str, Any]:
-    """Récupère les cours dans une plage de dates donnée."""
+    """Récupère les cours dans une plage de dates donnée avec correction timezone."""
     try:
         logger.info(f"🔥 === DÉBUT GET_COURSES_BY_DATE_RANGE ===")
         logger.info(f"📅 Dates reçues: {start_date} → {end_date}")
@@ -94,48 +94,67 @@ def get_courses_by_date_range(user_id: str, start_date: str, end_date: str) -> D
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        # === EXTRACTION ÉVÉNEMENTS ===
+        # === EXTRACTION ÉVÉNEMENTS (Compatible avec ta structure) ===
         all_events = []
         if isinstance(data, dict) and "emploi_du_temps" in data:
+            logger.info(f"📊 Structure emploi_du_temps détectée")
             for semaine_data in data["emploi_du_temps"]:
                 all_events.extend(semaine_data.get("evenements", []))
+        elif isinstance(data, list):
+            logger.info(f"📊 Structure liste détectée")
+            all_events = data
         
-        # === CORRECTION DES DATES ===
+        logger.info(f"📊 {len(all_events)} événements extraits")
+        
+        # === PARSING DATES DE RECHERCHE ===
         start_dt = datetime.fromisoformat(start_date)
         end_dt = datetime.fromisoformat(end_date)
         
-        # 🎯 CORRECTION : Si end_date est à 00:00:00, la mettre à 23:59:59
+        # 🎯 CORRECTION CRUCIALE : Si end_date est à 00:00:00, la mettre à 23:59:59
         if end_dt.time() == datetime.min.time():
             end_dt = end_dt.replace(hour=23, minute=59, second=59)
             logger.info(f"🔧 Date fin corrigée: {end_dt}")
         
-        logger.info(f"📅 Période de recherche: {start_dt} → {end_dt}")
+        logger.info(f"📅 Période finale: {start_dt} → {end_dt}")
         
-        # === FILTRAGE ===
+        # === FILTRAGE AVEC GESTION DES DEUX FORMATS ===
         filtered_courses = []
         
         for event in all_events:
             try:
-                course_start_str = event.get("début", "")
-                if not course_start_str:
+                # 🎯 Gérer les deux formats de dates possibles
+                debut_field = event.get("début") or event.get("start", "")
+                if not debut_field:
                     continue
-                    
-                course_start = datetime.strptime(course_start_str, "%Y-%m-%d %H:%M")
+                
+                # Parse la date (compatible avec le format de ton scraper: 'YYYY-MM-DD HH:MM')
+                if "T" in debut_field:
+                    course_start = datetime.fromisoformat(debut_field.replace('T', ' ').split('+')[0])
+                else:
+                    course_start = datetime.strptime(debut_field, "%Y-%m-%d %H:%M")
                 
                 # Test de la période
                 is_in_range = start_dt <= course_start <= end_dt
+                logger.info(f"📅 {event.get('nom_cours', event.get('title', 'Cours'))}: {course_start} dans [{start_dt} - {end_dt}] = {is_in_range}")
                 
                 if is_in_range:
-                    nom_cours = event.get('nom_cours', '')
+                    # Récupérer le nom du cours selon le format
+                    nom_cours = event.get('nom_cours') or event.get('title', 'Cours sans nom')
+                    
                     # Exclure les révisions et événements non-cours
                     if not (nom_cours.startswith('Révision') or 
                             nom_cours.startswith('VACANCES') or 
                             nom_cours.startswith('Férié')):
                         
+                        # Gérer fin de cours
+                        fin_field = event.get('fin') or event.get('end', '')
+                        if fin_field and "T" in fin_field:
+                            fin_field = fin_field.replace('T', ' ').split('+')[0]
+                        
                         filtered_courses.append({
                             'title': nom_cours,
                             'start': course_start.isoformat(),
-                            'end': event.get('fin', ''),
+                            'end': fin_field,
                             'professeur': event.get('professeur', ''),
                             'location': event.get('location', ''),
                             'description': event.get('description', '')
@@ -143,9 +162,10 @@ def get_courses_by_date_range(user_id: str, start_date: str, end_date: str) -> D
                         logger.info(f"✅ COURS AJOUTÉ: {nom_cours} à {course_start}")
                         
             except Exception as e:
+                logger.error(f"❌ Erreur traitement événement: {e}")
                 continue
         
-        logger.info(f"🎯 RÉSULTAT: {len(filtered_courses)} cours trouvé(s)")
+        logger.info(f"🎯 RÉSULTAT FINAL: {len(filtered_courses)} cours trouvé(s)")
         
         return {
             'status': 'success',
@@ -155,7 +175,9 @@ def get_courses_by_date_range(user_id: str, start_date: str, end_date: str) -> D
         }
         
     except Exception as e:
-        logger.error(f"❌ Erreur: {e}")
+        logger.error(f"❌ Erreur get_courses_by_date_range: {e}")
+        import traceback
+        logger.error(f"📍 Traceback: {traceback.format_exc()}")
         return {'status': 'error', 'message': str(e)}
 
 
@@ -264,105 +286,274 @@ def get_free_time_slots(user_id: str, date: str) -> List[Dict[str, str]]:
     return free_slots
 
 def get_next_course(user_id: str) -> Dict[str, Any]:
-    """
-    Récupère le prochain cours à venir.
-    """
-    schedule_data = load_schedule_data(user_id)
-    if not schedule_data:
-        return {}
-    
-    now = datetime.now()
-    upcoming_courses = []
-    
-    for course in schedule_data:
-        try:
-            course_start = datetime.strptime(course["début"], "%Y-%m-%d %H:%M")
-            if course_start > now:
-                upcoming_courses.append({
-                    **course,
-                    "start_datetime": course_start
-                })
-        except (ValueError, KeyError):
-            continue
-    
-    if not upcoming_courses:
-        return {}
-    
-    # Trier par date de début et prendre le premier
-    upcoming_courses.sort(key=lambda x: x["start_datetime"])
-    next_course = upcoming_courses[0]
-    
-    # Calculer le temps restant
-    time_until = next_course["start_datetime"] - now
-    days = time_until.days
-    hours, remainder = divmod(time_until.seconds, 3600)
-    minutes, _ = divmod(remainder, 60)
-    
-    next_course["time_until"] = f"{days} jours, {hours}h {minutes}min"
-    
-    return next_course
-def add_event_to_calendar(user_id: str, title: str, start_date: str, end_date: str, description: str = "") -> dict:
-    """Ajoute un événement sans corrompre la structure"""
-    from datetime import datetime
-    
-    logger.info(f"🎯 TENTATIVE AJOUT: {title} pour {user_id}")
-    
+    """Version améliorée du prochain cours avec plus de détails."""
     try:
+        logger.info(f"🔍 Recherche prochain cours pour {user_id}")
+        
+        data = load_schedule_data(user_id)
+        if not data:
+            return {
+                "status": "error",
+                "message": "❌ Aucun emploi du temps trouvé"
+            }
+        
+        # Extraction des événements selon la structure
+        all_events = []
+        if isinstance(data, dict) and "emploi_du_temps" in data:
+            for semaine_data in data["emploi_du_temps"]:
+                all_events.extend(semaine_data.get("evenements", []))
+        elif isinstance(data, list):
+            all_events = data
+        
+        # Filtrage des cours futurs
+        now = datetime.now()
+        upcoming_courses = []
+        
+        for event in all_events:
+            try:
+                debut_field = event.get("début") or event.get("start", "")
+                if not debut_field:
+                    continue
+                
+                # Parse date flexible
+                if "T" in debut_field:
+                    course_start = datetime.fromisoformat(debut_field.replace('T', ' ').split('+')[0])
+                else:
+                    course_start = datetime.strptime(debut_field, "%Y-%m-%d %H:%M")
+                
+                if course_start > now:
+                    nom_cours = event.get('nom_cours') or event.get('title', 'Cours')
+                    
+                    # Exclure les non-cours
+                    if not any(exclude in nom_cours for exclude in 
+                              ['Révision', 'VACANCES', 'Férié', 'révision']):
+                        
+                        upcoming_courses.append({
+                            "title": nom_cours,
+                            "start_datetime": course_start,
+                            "start": debut_field,
+                            "end": event.get('fin') or event.get('end', ''),
+                            "professeur": event.get('professeur', 'Inconnu'),
+                            "location": event.get('location', ''),
+                            "description": event.get('description', '')
+                        })
+                        
+            except Exception as e:
+                logger.warning(f"⚠️ Erreur traitement cours futur: {e}")
+                continue
+        
+        if not upcoming_courses:
+            return {
+                "status": "info",
+                "message": "📅 Aucun cours à venir dans votre emploi du temps",
+                "next_course": None
+            }
+        
+        # Trier et prendre le plus proche
+        upcoming_courses.sort(key=lambda x: x["start_datetime"])
+        next_course = upcoming_courses[0]
+        
+        # Calcul du temps restant amélioré
+        time_until = next_course["start_datetime"] - now
+        days = time_until.days
+        hours, remainder = divmod(time_until.seconds, 3600)
+        minutes, _ = divmod(remainder, 60)
+        
+        # Formatage du temps
+        if days > 0:
+            time_str = f"{days} jour{'s' if days > 1 else ''} et {hours}h{minutes:02d}min"
+        elif hours > 0:
+            time_str = f"{hours}h{minutes:02d}min"
+        else:
+            time_str = f"{minutes} minute{'s' if minutes > 1 else ''}"
+        
+        next_course["time_until"] = time_str
+        next_course["is_today"] = next_course["start_datetime"].date() == now.date()
+        next_course["is_tomorrow"] = (next_course["start_datetime"].date() - now.date()).days == 1
+        
+        # Ajouter les cours suivants (optionnel)
+        next_course["following_courses"] = [
+            {
+                "title": course["title"],
+                "start": course["start"],
+                "professeur": course["professeur"]
+            }
+            for course in upcoming_courses[1:4]  # 3 cours suivants
+        ]
+        
+        logger.info(f"✅ Prochain cours: {next_course['title']} dans {time_str}")
+        
+        return {
+            "status": "success",
+            "next_course": next_course,
+            "total_upcoming": len(upcoming_courses)
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ Erreur get_next_course: {str(e)}")
+        return {
+            "status": "error",
+            "message": f"❌ Erreur lors de la recherche: {str(e)}"
+        }
+
+
+def add_event_to_calendar(user_id: str, title: str, start_date: str, end_date: str, description: str = "") -> dict:
+    """Version améliorée avec validation et structure flexible."""
+    try:
+        logger.info(f"🎯 AJOUT ÉVÉNEMENT: {title} pour {user_id}")
+        
+        # Validation des dates
+        try:
+            start_dt = datetime.fromisoformat(start_date.replace('T', ' ').split('+')[0])
+            end_dt = datetime.fromisoformat(end_date.replace('T', ' ').split('+')[0])
+            
+            if start_dt >= end_dt:
+                return {"success": False, "message": "❌ Date de fin doit être après la date de début"}
+                
+        except ValueError as e:
+            return {"success": False, "message": f"❌ Format de date invalide: {str(e)}"}
+        
+        # Validation du titre
+        if not title.strip():
+            return {"success": False, "message": "❌ Le titre ne peut pas être vide"}
+        
         json_dir = "json_schedules"
+        os.makedirs(json_dir, exist_ok=True)
         json_file = os.path.join(json_dir, f"{user_id}_edt.json")
         
-        # Charger la structure actuelle
+        # Charger structure existante
         if os.path.exists(json_file):
             with open(json_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
         else:
-            data = []
+            data = {"emploi_du_temps": [], "revisions": []}
         
-        # Créer l'événement de révision
+        # Créer l'événement
         nouveau_event = {
-            "title": title,
-            "start": start_date,
-            "end": end_date,
+            "nom_cours": title,
+            "début": start_dt.strftime('%Y-%m-%d %H:%M'),
+            "fin": end_dt.strftime('%Y-%m-%d %H:%M'),
             "description": description,
-            "color": "#10b981",
-            "textColor": "#ffffff",
-            "borderColor": "#059669",
+            "professeur": "IA Assistant",
+            "location": "",
             "extendedProps": {
                 "type": "revision",
                 "added_by_ai": True,
-                "created_at": datetime.now().isoformat()
+                "created_at": datetime.now().isoformat(),
+                "color": "#10b981",
+                "textColor": "#ffffff"
             }
         }
         
-        # 🎯 AJOUT SELON LA STRUCTURE
+        # Ajout selon la structure
+        total_events = 0
         if isinstance(data, list):
-            # Structure liste : ajouter directement
             data.append(nouveau_event)
             total_events = len(data)
-        else:
-            # Structure objet : ajouter aux révisions
+        elif isinstance(data, dict):
             if "revisions" not in data:
                 data["revisions"] = []
             data["revisions"].append(nouveau_event)
-            total_events = len(data.get("revisions", []))
+            total_events = len(data["revisions"])
+        
+        # Sauvegarde avec backup
+        backup_file = f"{json_file}.backup"
+        if os.path.exists(json_file):
+            import shutil
+            shutil.copy2(json_file, backup_file)
+        
+        with open(json_file, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        logger.info(f"✅ Événement ajouté! Total: {total_events}")
+        
+        return {
+            "success": True,
+            "message": f"✅ '{title}' ajouté avec succès pour le {start_dt.strftime('%d/%m/%Y à %H:%M')}",
+            "event": nouveau_event,
+            "total_events": total_events,
+            "date_added": datetime.now().strftime('%d/%m/%Y %H:%M')
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ Erreur ajout événement: {str(e)}")
+        return {
+            "success": False, 
+            "message": f"❌ Erreur lors de l'ajout: {str(e)}"
+        }
+
+
+def remove_revision_events(user_id: str) -> dict:
+    """Version améliorée avec statistiques détaillées."""
+    try:
+        logger.info(f"🗑️ SUPPRESSION révisions pour {user_id}")
+        
+        json_dir = "json_schedules"
+        json_file = os.path.join(json_dir, f"{user_id}_edt.json")
+        
+        if not os.path.exists(json_file):
+            return {
+                "success": False, 
+                "message": "❌ Aucun fichier emploi du temps trouvé"
+            }
+        
+        # Backup avant suppression
+        backup_file = f"{json_file}.backup"
+        import shutil
+        shutil.copy2(json_file, backup_file)
+        
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        removed_count = 0
+        removed_events = []
+        
+        if isinstance(data, list):
+            # Structure liste
+            original_count = len(data)
+            removed_events = [event for event in data 
+                            if event.get("extendedProps", {}).get("added_by_ai", False)]
+            data[:] = [event for event in data 
+                        if not event.get("extendedProps", {}).get("added_by_ai", False)]
+            removed_count = original_count - len(data)
+            
+        elif isinstance(data, dict):
+            # Structure objet
+            if "revisions" in data:
+                removed_events = data["revisions"].copy()
+                removed_count = len(removed_events)
+                data["revisions"] = []
         
         # Sauvegarder
         with open(json_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"✅ Révision ajoutée ! Total: {total_events}")
+        # Statistiques
+        if removed_events:
+            event_titles = [event.get('nom_cours', event.get('title', 'Sans titre')) 
+                            for event in removed_events[:3]]
+            detail_msg = f"Supprimé: {', '.join(event_titles)}"
+            if len(removed_events) > 3:
+                detail_msg += f" (+{len(removed_events)-3} autres)"
+        else:
+            detail_msg = "Aucune révision à supprimer"
+        
+        logger.info(f"✅ {removed_count} révisions supprimées")
         
         return {
             "success": True,
-            "message": f"✅ Session '{title}' ajoutée avec succès !",
-            "event": nouveau_event,
-            "total_events": total_events
+            "message": f"✅ {removed_count} révision{'s' if removed_count > 1 else ''} supprimée{'s' if removed_count > 1 else ''}",
+            "removed_count": removed_count,
+            "details": detail_msg,
+            "backup_created": True
         }
         
     except Exception as e:
-        logger.error(f"❌ Erreur ajout: {str(e)}")
-        return {"success": False, "message": f"❌ Erreur: {str(e)}"}
-
+        logger.error(f"❌ Erreur suppression: {str(e)}")
+        return {
+            "success": False, 
+            "message": f"❌ Erreur lors de la suppression: {str(e)}"
+        }
 
 
 def remove_revision_events(user_id: str) -> dict:
