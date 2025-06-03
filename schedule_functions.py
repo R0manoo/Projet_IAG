@@ -5,56 +5,161 @@ from typing import List, Dict, Any
 import logging
 logger = logging.getLogger(__name__)
 
-def load_schedule_data(user_id: str) -> List[Dict[str, Any]]:
-    """
-    Charge les données d'emploi du temps avec gestion des structures corrompues.
-    """
-    json_dir = "json_schedules"
-    json_file = os.path.join(json_dir, f"{user_id}_edt.json")
-    
-    if not os.path.exists(json_file):
-        logger.info(f"❌ Fichier non trouvé: {json_file}")
-        return []
-    
+def load_schedule_data(user_id: str) -> List[Dict]:
+    """Charge les données du calendrier pour l'affichage Streamlit."""
     try:
+        logger.info(f"📂 Chargement des données calendrier pour {user_id}")
+        
+        json_dir = "json_schedules"
+        json_file = os.path.join(json_dir, f"{user_id}_edt.json")
+        
+        if not os.path.exists(json_file):
+            logger.error(f"❌ Fichier non trouvé: {json_file}")
+            return []
+        
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        all_events = []
-        
-        # 🎯 CAS 1: Structure correcte (objet avec emploi_du_temps)
-        if isinstance(data, dict) and "emploi_du_temps" in data:
-            # Charger les cours
-            for semaine_data in data["emploi_du_temps"]:
-                for event in semaine_data.get("evenements", []):
-                    formatted_event = {
-                        "title": event.get("nom_cours", "Cours"),
-                        "start": event.get("début", ""),
-                        "end": event.get("fin", ""),
-                        "professeur": event.get("professeur", ""),
-                        "color": get_color_for_course(event.get("nom_cours", ""))
-                    }
-                    all_events.append(formatted_event)
-            
-            # Ajouter les révisions si elles existent
-            revisions = data.get("revisions", [])
-            all_events.extend(revisions)
-            
-        # 🎯 CAS 2: Liste directe (structure aplatie/corrompue)
-        elif isinstance(data, list):
-            logger.info(f"📋 Structure liste détectée, chargement direct...")
-            all_events = data  # Directement la liste
-            
-        else:
-            logger.error(f"❌ Structure non reconnue: {type(data)}")
+        if not data:
+            logger.warning(f"⚠️ Fichier vide pour {user_id}")
             return []
         
-        logger.info(f"✅ {len(all_events)} événement(s) chargé(s) pour {user_id}")
-        return all_events
+        calendar_events = []
+        
+        # === GESTION STRUCTURE emploi_du_temps ===
+        if isinstance(data, dict) and "emploi_du_temps" in data:
+            logger.info("📊 Structure emploi_du_temps détectée")
+            
+            for semaine_data in data["emploi_du_temps"]:
+                if "evenements" not in semaine_data:
+                    continue
+                    
+                for event in semaine_data["evenements"]:
+                    try:
+                        # Extraction des champs
+                        title = event.get("nom_cours", "Cours")
+                        start = event.get("début", "")
+                        end = event.get("fin", "")
+                        prof = event.get("professeur", "")
+                        
+                        if not start or not end:
+                            logger.warning(f"⚠️ Événement sans dates: {title}")
+                            continue
+                        
+                        # Conversion au format ISO pour le calendrier
+                        if "T" not in start:
+                            start_iso = start.replace(" ", "T")
+                            end_iso = end.replace(" ", "T")
+                        else:
+                            start_iso = start
+                            end_iso = end
+                        
+                        # Déterminer le type et la couleur
+                        event_type = "course"
+                        color = "#3b82f6"  # Bleu par défaut
+                        
+                        if event.get("extendedProps", {}).get("added_by_ai"):
+                            event_type = "revision"
+                            color = "#10b981"  # Vert pour AI
+                        elif any(keyword in title.lower() for keyword in ["tp", "td"]):
+                            color = "#f59e0b"  # Orange pour TP/TD
+                        elif "cm" in title.lower():
+                            color = "#3b82f6"  # Bleu pour CM
+                        elif any(keyword in title.lower() for keyword in ["examen", "contrôle", "test"]):
+                            color = "#ef4444"  # Rouge pour examens
+                        
+                        calendar_event = {
+                            "title": f"{title}" + (f" - {prof}" if prof and prof != "Inconnu" else ""),
+                            "start": start_iso,
+                            "end": end_iso,
+                            "color": color,
+                            "textColor": "#ffffff",
+                            "extendedProps": {
+                                "type": event_type,
+                                "professeur": prof,
+                                "description": event.get("description", ""),
+                                "location": event.get("location", ""),
+                                "added_by_ai": event.get("extendedProps", {}).get("added_by_ai", False)
+                            }
+                        }
+                        
+                        calendar_events.append(calendar_event)
+                        
+                    except Exception as e:
+                        logger.error(f"❌ Erreur traitement événement: {e}")
+                        continue
+            
+            # Ajouter les révisions IA si elles existent
+            if "revisions" in data:
+                logger.info(f"📝 Ajout de {len(data['revisions'])} révision(s)")
+                for revision in data["revisions"]:
+                    try:
+                        start = revision.get("début", "")
+                        end = revision.get("fin", "")
+                        
+                        if start and end:
+                            start_iso = start.replace(" ", "T") if "T" not in start else start
+                            end_iso = end.replace(" ", "T") if "T" not in end else end
+                            
+                            calendar_events.append({
+                                "title": f"📚 {revision.get('nom_cours', 'Révision')}",
+                                "start": start_iso,
+                                "end": end_iso,
+                                "color": "#10b981",
+                                "textColor": "#ffffff",
+                                "extendedProps": {
+                                    "type": "revision",
+                                    "added_by_ai": True,
+                                    "description": revision.get("description", "")
+                                }
+                            })
+                    except Exception as e:
+                        logger.error(f"❌ Erreur révision: {e}")
+        
+        # === GESTION STRUCTURE LISTE ===
+        elif isinstance(data, list):
+            logger.info("📊 Structure liste détectée")
+            
+            for event in data:
+                try:
+                    title = event.get("nom_cours") or event.get("title", "Cours")
+                    start = event.get("début") or event.get("start", "")
+                    end = event.get("fin") or event.get("end", "")
+                    
+                    if not start or not end:
+                        continue
+                    
+                    start_iso = start.replace(" ", "T") if "T" not in start else start
+                    end_iso = end.replace(" ", "T") if "T" not in end else end
+                    
+                    color = "#10b981" if event.get("extendedProps", {}).get("added_by_ai") else "#3b82f6"
+                    
+                    calendar_events.append({
+                        "title": title,
+                        "start": start_iso,
+                        "end": end_iso,
+                        "color": color,
+                        "textColor": "#ffffff",
+                        "extendedProps": event.get("extendedProps", {})
+                    })
+                    
+                except Exception as e:
+                    logger.error(f"❌ Erreur événement liste: {e}")
+        
+        logger.info(f"✅ {len(calendar_events)} événements chargés pour le calendrier")
+        
+        # Debug: afficher quelques événements
+        for i, event in enumerate(calendar_events[:3]):
+            logger.info(f"📅 Événement {i+1}: {event['title']} le {event['start']}")
+        
+        return calendar_events
         
     except Exception as e:
-        logger.error(f"❌ Erreur lors du chargement: {str(e)}")
+        logger.error(f"❌ Erreur load_schedule_data: {str(e)}")
+        import traceback
+        logger.error(f"📍 Traceback: {traceback.format_exc()}")
         return []
+
 
 
 def get_color_for_course(course_name: str) -> str:

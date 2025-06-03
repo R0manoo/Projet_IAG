@@ -77,9 +77,8 @@ def get_edt(user_id: str) -> List[Dict[str, str]]:
         logger.error(f"❌ Erreur get_edt: {str(e)}")
         raise
 
-
 def get_edt_semaine(user_id: str) -> Dict[str, Any]:
-    """Version améliorée avec structure organisée par semaine."""
+    """Version améliorée avec structure organisée par semaine et sauvegarde automatique."""
     try:
         logger.info(f"🗓️ Récupération EDT par semaine pour {user_id}")
         
@@ -88,13 +87,15 @@ def get_edt_semaine(user_id: str) -> Dict[str, Any]:
         response.encoding = "UTF-8"
         
         if not response.ok:
-            raise Exception(f"Identifiant invalide (Code: {response.status_code}) 🚫")
+            raise Exception(f"Identifiant invalide ou serveur inaccessible (Code: {response.status_code}) 🚫")
 
         cal = Calendar(response.text)
         cours_par_semaine = defaultdict(list)
         local_tz = pytz.timezone("Pacific/Noumea")
         
         stats = {"total_events": 0, "processed": 0, "errors": 0}
+
+        logger.info(f"📅 Traitement de {len(cal.events)} événements")
 
         for event in cal.events:
             try:
@@ -110,24 +111,25 @@ def get_edt_semaine(user_id: str) -> Dict[str, Any]:
                 # Extraction professeur améliorée
                 professeur = "Inconnu"
                 if event.description:
-                    # Chercher des patterns de prof/enseignant
                     desc_lines = event.description.split('\n')
                     for line in desc_lines:
                         line = line.strip()
+                        # Pattern pour professeur: "P.Nom" ou contient "prof"/"enseignant"
                         if any(keyword in line.lower() for keyword in ['prof', 'enseignant']) or \
-                           (len(line.split()) == 2 and '.' in line):  # Pattern "P.Nom"
+                           (len(line.split()) <= 2 and '.' in line and len(line) < 20):
                             professeur = line
                             break
 
-                cours_par_semaine[week_num].append({
+                cours_data = {
                     "nom_cours": nom_coupee,
                     "début": start_local.strftime('%Y-%m-%d %H:%M'),
                     "fin": end_local.strftime('%Y-%m-%d %H:%M'),
                     "description": description_coupee,
                     "professeur": professeur,
                     "location": getattr(event, 'location', '') or ''
-                })
+                }
                 
+                cours_par_semaine[week_num].append(cours_data)
                 stats["processed"] += 1
                 
             except Exception as e:
@@ -135,7 +137,7 @@ def get_edt_semaine(user_id: str) -> Dict[str, Any]:
                 stats["errors"] += 1
                 continue
 
-        # Structure de retour améliorée
+        # Structure de retour organisée
         result = {
             "emploi_du_temps": [
                 {
@@ -144,6 +146,7 @@ def get_edt_semaine(user_id: str) -> Dict[str, Any]:
                 }
                 for week_num, events in sorted(cours_par_semaine.items())
             ],
+            "revisions": [],  # Pour les événements ajoutés par l'IA
             "metadata": {
                 "user_id": user_id,
                 "total_weeks": len(cours_par_semaine),
@@ -152,9 +155,25 @@ def get_edt_semaine(user_id: str) -> Dict[str, Any]:
             }
         }
         
-        logger.info(f"✅ {stats['processed']} cours organisés en {len(cours_par_semaine)} semaines")
+        # Sauvegarder automatiquement
+        json_dir = "json_schedules"
+        os.makedirs(json_dir, exist_ok=True)
+        json_file = os.path.join(json_dir, f"{user_id}_edt.json")
+        
+        with open(json_file, 'w', encoding='utf-8') as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+        
+        logger.info(f"✅ Fichier sauvegardé: {json_file}")
+        logger.info(f"📊 {stats['processed']} cours organisés en {len(cours_par_semaine)} semaines")
+        
+        # Affichage des premières semaines pour debug
+        for semaine_data in result["emploi_du_temps"][:2]:
+            week_num = semaine_data["semaine"]
+            nb_events = len(semaine_data["evenements"])
+            logger.info(f"📅 Semaine {week_num}: {nb_events} événement(s)")
+        
         return result
         
     except Exception as e:
         logger.error(f"❌ Erreur get_edt_semaine: {str(e)}")
-        raise
+        raise Exception(f"Impossible de récupérer l'emploi du temps: {str(e)}")

@@ -33,20 +33,41 @@ def check_api_key():
     return api_key
 
 def ensure_schedule_data(user_id):
-    """S'assure que les données d'emploi du temps sont disponibles"""
+    """S'assure que les données d'emploi du temps sont disponibles avec meilleur feedback"""
     json_dir = "json_schedules"
     json_file = os.path.join(json_dir, f"{user_id}_edt.json")
     
     if not os.path.exists(json_file):
-        st.info(f"📥 Récupération de l'emploi du temps pour {user_id}...")
+        st.info(f"📥 Première connexion pour {user_id}. Récupération de l'emploi du temps...")
         try:
-            get_edt_semaine(user_id)
-            st.success("✅ Emploi du temps mis à jour !")
+            with st.spinner("🔄 Téléchargement en cours..."):
+                result = get_edt_semaine(user_id)
+            
+            stats = result.get("metadata", {}).get("stats", {})
+            st.success(f"✅ Emploi du temps récupéré ! {stats.get('processed', 0)} cours trouvés")
             return True
+            
         except Exception as e:
             st.error(f"❌ Erreur lors de la récupération : {e}")
             return False
-    return True
+    
+    # Vérifier que le fichier contient des données valides
+    try:
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        if not data or (isinstance(data, dict) and not data.get("emploi_du_temps")):
+            st.warning("⚠️ Fichier emploi du temps vide, nouvelle récupération...")
+            result = get_edt_semaine(user_id)
+            return True
+            
+        return True
+        
+    except Exception as e:
+        st.error(f"❌ Fichier emploi du temps corrompu : {e}")
+        return False
+
+
 
 import logging
 
@@ -232,7 +253,6 @@ def generate_response(prompt: str, user_id: str) -> str:
 
 
 
-
 def main():
     st.set_page_config(page_title="Planning Assistant", layout="wide")
     
@@ -263,7 +283,19 @@ def main():
             with refresh_col1:
                 if st.button("🔄 Rafraîchir l'emploi du temps"):
                     with st.spinner("Mise à jour en cours..."):
-                        get_edt_semaine(user_id)
+                        try:
+                            result = get_edt_semaine(user_id)
+                            # Sauvegarder le résultat
+                            json_dir = "json_schedules"
+                            os.makedirs(json_dir, exist_ok=True)
+                            json_file = os.path.join(json_dir, f"{user_id}_edt.json")
+                            
+                            with open(json_file, 'w', encoding='utf-8') as f:
+                                json.dump(result, f, indent=2, ensure_ascii=False)
+                            
+                            st.success(f"✅ EDT mis à jour ! {result['metadata']['stats']['processed']} cours trouvés")
+                        except Exception as e:
+                            st.error(f"❌ Erreur: {e}")
                     st.rerun()
             
             with refresh_col2:
@@ -271,9 +303,10 @@ def main():
                     from schedule_functions import remove_revision_events
                     result = remove_revision_events(user_id)
                     st.info(result["message"])
-                    st.rerun()
+                    if result.get("success"):
+                        st.rerun()
             
-            # S'assurer que les données existent
+            # S'assurer que les données existent et afficher le calendrier
             if ensure_schedule_data(user_id):
                 schedule_data = load_schedule_data(user_id)
                 
@@ -311,6 +344,7 @@ def main():
                         }
                     }
                     
+                    # Affichage du calendrier
                     calendar_result = calendar(
                         events=schedule_data,
                         options=calendar_options,
@@ -327,11 +361,23 @@ def main():
                     with col_stat2:
                         st.metric("Cours", total_events - ai_events) 
                     with col_stat3:
-                        st.metric("Évènements ajoutés", ai_events, delta=ai_events if ai_events > 0 else None)
+                        st.metric("Révisions ajoutées", ai_events, delta=ai_events if ai_events > 0 else None)
+                        
+                    # Debug temporaire - à supprimer après vérification
+                    if st.checkbox("🔍 Mode debug"):
+                        with st.expander("Structure des données"):
+                            if schedule_data:
+                                st.json(schedule_data[:2])  # Affiche les 2 premiers événements
+                        
+                        st.info(f"📊 {len(schedule_data)} événements chargés pour le calendrier")
+                        
                 else:
-                    st.error("❌ Aucun cours trouvé")
+                    st.error("❌ Aucun cours trouvé dans le fichier")
+                    st.info("🔄 Essayez de cliquer sur 'Rafraîchir l'emploi du temps'")
+            else:
+                st.error("❌ Impossible de charger l'emploi du temps")
         else:
-            st.info("👆 Entrez votre identifiant pour voir votre emploi du temps et commencer la discution")
+            st.info("👆 Entrez votre identifiant pour voir votre emploi du temps")
     
     with col2:
         st.subheader("🤖 Assistant de révisions")
@@ -350,14 +396,12 @@ def main():
                 st.session_state.messages.append({"role": "user", "content": prompt})
 
                 with st.spinner("🤔 Analyse en cours..."):
-                    # 🎯 Plus besoin de liste_dates ! L'IA les détermine automatiquement
                     response = generate_response(prompt, user_id=user_id)
 
                 st.session_state.messages.append({"role": "assistant", "content": response})
                 st.rerun()
         else:
-            st.info("La discution s'affichera ici")
-
+            st.info("La discussion s'affichera ici")
 
 custom_css_outside = """
 /* Thème sombre moderne */

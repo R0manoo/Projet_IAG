@@ -1,0 +1,1580 @@
+{
+  "emploi_du_temps": [
+    {
+      "semaine": 7,
+      "evenements": [
+        {
+          "nom_cours": "PRE-RENTREE  - A.Chung  - Ate : A7 [Edt-Ens]",
+          "début": "2025-02-10 09:00",
+          "fin": "2025-02-10 10:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-02-10 13:30",
+          "fin": "2025-02-10 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-10 15:45",
+          "fin": "2025-02-10 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-11 13:30",
+          "fin": "2025-02-11 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-02-12 13:30",
+          "fin": "2025-02-12 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nBc : Pect1 BacoAte : A7 [Edt-Ens]",
+          "début": "2025-02-13 13:30",
+          "fin": "2025-02-13 15:30",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-02-13 15:45",
+          "fin": "2025-02-13 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nBc : Amphi BacoAte : A8 [Edt-Ens]",
+          "début": "2025-02-14 07:45",
+          "fin": "2025-02-14 09:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nBc : Pect1 BacoAte : A7 [Edt-Ens]",
+          "début": "2025-02-14 10:00",
+          "fin": "2025-02-14 12:00",
+          "professeur": "L.Steffan"
+        }
+      ]
+    },
+    {
+      "semaine": 8,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-17 13:30",
+          "fin": "2025-02-17 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-17 15:45",
+          "fin": "2025-02-17 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nAte : A5Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-18 13:30",
+          "fin": "2025-02-18 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-02-18 15:45",
+          "fin": "2025-02-18 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-02-20 10:00",
+          "fin": "2025-02-20 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-02-20 13:30",
+          "fin": "2025-02-20 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-02-20 15:45",
+          "fin": "2025-02-20 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nAte : A5Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-02-21 07:45",
+          "fin": "2025-02-21 09:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nBc : Pect1 BacoPnt : Télé-amphi 80 [Edt-Ens]",
+          "début": "2025-02-21 10:00",
+          "fin": "2025-02-21 12:00",
+          "professeur": "L.Steffan"
+        }
+      ]
+    },
+    {
+      "semaine": 9,
+      "evenements": [
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-02-24 10:00",
+          "fin": "2025-02-24 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-24 13:30",
+          "fin": "2025-02-24 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-24 15:45",
+          "fin": "2025-02-24 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nAte : A5Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-25 13:30",
+          "fin": "2025-02-25 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-02-25 15:45",
+          "fin": "2025-02-25 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "AVRD MICRO 3  - V.Page  - Ate : A1 [Edt-Ens]",
+          "début": "2025-02-26 07:45",
+          "fin": "2025-02-26 09:45",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nAte : A5Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-02-27 07:45",
+          "fin": "2025-02-27 09:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nAte : A5Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-02-27 10:00",
+          "fin": "2025-02-27 12:00",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-02-27 13:30",
+          "fin": "2025-02-27 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-02-27 15:45",
+          "fin": "2025-02-27 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nAte : A5Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-02-28 07:45",
+          "fin": "2025-02-28 09:45",
+          "professeur": "H.Auclair"
+        }
+      ]
+    },
+    {
+      "semaine": 10,
+      "evenements": [
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-03-03 07:45",
+          "fin": "2025-03-03 09:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoAte : A7 [Edt-Ens]",
+          "début": "2025-03-03 10:00",
+          "fin": "2025-03-03 12:00",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-03 13:30",
+          "fin": "2025-03-03 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-03 15:45",
+          "fin": "2025-03-03 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nAte : A5Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-04 13:30",
+          "fin": "2025-03-04 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-03-04 15:45",
+          "fin": "2025-03-04 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-03-06 07:45",
+          "fin": "2025-03-06 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-03-06 10:00",
+          "fin": "2025-03-06 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "AVRD MICRO 3  - V.Page  - Ate : A4 [Edt-Ens]",
+          "début": "2025-03-06 13:30",
+          "fin": "2025-03-06 15:30",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Td : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-03-06 15:45",
+          "fin": "2025-03-06 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - PRESENTIEL BACO S10 \nL.Steffan  \nBc : Pect1 BacoAte : A7 [Edt-Ens]",
+          "début": "2025-03-07 07:45",
+          "fin": "2025-03-07 09:45",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - PRESENTIEL BACO S10 \nL.Steffan  \nBc : Pect1 BacoAte : A7 [Edt-Ens]",
+          "début": "2025-03-07 10:00",
+          "fin": "2025-03-07 12:00",
+          "professeur": "L.Steffan"
+        }
+      ]
+    },
+    {
+      "semaine": 11,
+      "evenements": [
+        {
+          "nom_cours": "AVRD MICRO 3  - V.Page  - Ate : A2 [Edt-Ens]",
+          "début": "2025-03-10 07:45",
+          "fin": "2025-03-10 09:45",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "AVRD MICRO 3  - V.Page  - Ate : A4 [Edt-Ens]",
+          "début": "2025-03-10 10:00",
+          "fin": "2025-03-10 12:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-10 13:30",
+          "fin": "2025-03-10 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-10 15:45",
+          "fin": "2025-03-10 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nAte : A5Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-11 13:30",
+          "fin": "2025-03-11 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nBc : Pect1 BacoAte : A6 [Edt-Ens]",
+          "début": "2025-03-11 15:45",
+          "fin": "2025-03-11 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-03-12 07:45",
+          "fin": "2025-03-12 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-03-12 10:00",
+          "fin": "2025-03-12 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Microéco 3",
+          "début": "2025-03-12 15:45",
+          "fin": "2025-03-12 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-03-13 07:45",
+          "fin": "2025-03-13 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nAte : A8Bc : Salle 2 Baco [Edt-Ens]",
+          "début": "2025-03-13 10:00",
+          "fin": "2025-03-13 12:00",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-03-13 15:45",
+          "fin": "2025-03-13 17:45",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 12,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-17 10:00",
+          "fin": "2025-03-17 12:00",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nBc : Amphi BacoAte : A7 [Edt-Ens]",
+          "début": "2025-03-17 13:30",
+          "fin": "2025-03-17 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-03-18 15:45",
+          "fin": "2025-03-18 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Microéco 3",
+          "début": "2025-03-19 15:45",
+          "fin": "2025-03-19 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nAte : A1Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-03-20 10:15",
+          "fin": "2025-03-20 12:15",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-03-20 15:45",
+          "fin": "2025-03-20 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nBc : Salle 1 BacoAte : A7 [Edt-Ens]",
+          "début": "2025-03-21 07:45",
+          "fin": "2025-03-21 09:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-03-21 10:00",
+          "fin": "2025-03-21 12:00",
+          "professeur": "S.Blaise"
+        }
+      ]
+    },
+    {
+      "semaine": 13,
+      "evenements": [
+        {
+          "nom_cours": "Td : Economie et Finance Internationales \nL.Roi  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-24 07:45",
+          "fin": "2025-03-24 09:45",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoPnt : Télé-amphi 80 [Edt-Ens]",
+          "début": "2025-03-24 10:00",
+          "fin": "2025-03-24 12:00",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-24 13:30",
+          "fin": "2025-03-24 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nAte : A5Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-25 13:30",
+          "fin": "2025-03-25 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-03-25 15:45",
+          "fin": "2025-03-25 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-03-26 07:45",
+          "fin": "2025-03-26 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-03-26 10:00",
+          "fin": "2025-03-26 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Microéco 3",
+          "début": "2025-03-26 15:45",
+          "fin": "2025-03-26 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nAte : A1Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-03-27 10:15",
+          "fin": "2025-03-27 12:15",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-03-27 15:45",
+          "fin": "2025-03-27 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International - CC1 \nH.Auclair  \nAte : A2 [Edt-Ens]",
+          "début": "2025-03-28 07:45",
+          "fin": "2025-03-28 09:45",
+          "professeur": "H.Auclair"
+        }
+      ]
+    },
+    {
+      "semaine": 14,
+      "evenements": [
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-03-31 07:45",
+          "fin": "2025-03-31 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-31 13:30",
+          "fin": "2025-03-31 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-03-31 15:45",
+          "fin": "2025-03-31 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nAte : A5Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-04-01 13:30",
+          "fin": "2025-04-01 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-04-02 07:45",
+          "fin": "2025-04-02 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-04-02 10:00",
+          "fin": "2025-04-02 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - PRESENTIEL BACO S14 \nL.Steffan  \nPnt : Télé-amphi 80Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-04-02 15:45",
+          "fin": "2025-04-02 17:45",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-04-03 08:00",
+          "fin": "2025-04-03 10:00",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - PRESENTIEL BACO S14 \nL.Steffan  \nAte : A7Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-04-03 10:00",
+          "fin": "2025-04-03 12:00",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-04-03 15:45",
+          "fin": "2025-04-03 17:45",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 16,
+      "evenements": [
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-04-14 07:45",
+          "fin": "2025-04-14 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Salle 2 Baco [Edt-Ens]",
+          "début": "2025-04-14 13:30",
+          "fin": "2025-04-14 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nPnt : Télé-amphi 80Bc : Salle 2 Baco [Edt-Ens]",
+          "début": "2025-04-14 15:45",
+          "fin": "2025-04-14 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-04-15 07:45",
+          "fin": "2025-04-15 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nBc : Salle 2 BacoPnt : Télé-amphi 80 [Edt-Ens]",
+          "début": "2025-04-15 10:00",
+          "fin": "2025-04-15 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Microéco 3",
+          "début": "2025-04-16 15:45",
+          "fin": "2025-04-16 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nBc : Salle 1 BacoAte : A10 [Edt-Ens]",
+          "début": "2025-04-17 07:45",
+          "fin": "2025-04-17 09:45",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "CC1 Microéconomie 3 05_0138  - G.Lagadec  - Ate : A7 [Edt-Ens]",
+          "début": "2025-04-17 10:00",
+          "fin": "2025-04-17 12:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - CC1 \nL.Steffan  \nAte : A6 [Edt-Ens]",
+          "début": "2025-04-17 13:30",
+          "fin": "2025-04-17 15:30",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nBc : Salle 1 BacoAte : A5 [Edt-Ens]",
+          "début": "2025-04-18 07:45",
+          "fin": "2025-04-18 09:45",
+          "professeur": "H.Auclair"
+        }
+      ]
+    },
+    {
+      "semaine": 17,
+      "evenements": [
+        {
+          "nom_cours": "Td : Economie et Finance Internationales \nL.Roi  \nPnt : Télé-amphi 80Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-04-22 07:45",
+          "fin": "2025-04-22 09:45",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-04-22 15:45",
+          "fin": "2025-04-22 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Microéco 3",
+          "début": "2025-04-23 15:45",
+          "fin": "2025-04-23 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-04-24 07:45",
+          "fin": "2025-04-24 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-04-24 10:00",
+          "fin": "2025-04-24 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-04-24 13:30",
+          "fin": "2025-04-24 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 \nS.Blaise  \nBc : Pect1 BacoAte : A3 [Edt-Ens]",
+          "début": "2025-04-24 15:45",
+          "fin": "2025-04-24 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nAte : A5Bc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-04-25 07:45",
+          "fin": "2025-04-25 09:45",
+          "professeur": "H.Auclair"
+        }
+      ]
+    },
+    {
+      "semaine": 18,
+      "evenements": [
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-04-28 10:00",
+          "fin": "2025-04-28 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nAte : A1Bc : Salle 1 Baco,Ate : A1 [Edt-Ens]",
+          "début": "2025-04-28 15:45",
+          "fin": "2025-04-28 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nBc : Amphi BacoAte : A5 [Edt-Ens]",
+          "début": "2025-04-29 13:30",
+          "fin": "2025-04-29 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-04-29 15:45",
+          "fin": "2025-04-29 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Evaluation des Politiques Publiques",
+          "début": "2025-04-30 10:00",
+          "fin": "2025-04-30 12:00",
+          "professeur": "S.Blaise"
+        }
+      ]
+    },
+    {
+      "semaine": 19,
+      "evenements": [
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-05-05 07:45",
+          "fin": "2025-05-05 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoAte : A7 [Edt-Ens]",
+          "début": "2025-05-05 10:15",
+          "fin": "2025-05-05 12:15",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Td : Microéco 3 \nG.Lagadec  \nBan : Amphi Guy Agniel [Edt-Ens]",
+          "début": "2025-05-05 13:30",
+          "fin": "2025-05-05 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles - salle reunion \nS.Blaise  \nPnt : Télé-amphi 80 [Edt-Ens]",
+          "début": "2025-05-05 15:45",
+          "fin": "2025-05-05 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques \nS.Blaise  \nBc : Amphi BacoAte : A5 [Edt-Ens]",
+          "début": "2025-05-06 13:30",
+          "fin": "2025-05-06 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique \nL.Steffan  \nAte : A1Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-05-06 15:45",
+          "fin": "2025-05-06 17:45",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-05-07 10:00",
+          "fin": "2025-05-07 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles",
+          "début": "2025-05-07 15:45",
+          "fin": "2025-05-07 17:45",
+          "professeur": "S.Blaise"
+        }
+      ]
+    },
+    {
+      "semaine": 20,
+      "evenements": [
+        {
+          "nom_cours": "Td : Economie et Finance Internationales \nL.Roi  \nAte : A7Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-05-12 08:00",
+          "fin": "2025-05-12 10:00",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoAte : A7 [Edt-Ens]",
+          "début": "2025-05-12 10:15",
+          "fin": "2025-05-12 12:15",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3",
+          "début": "2025-05-12 13:30",
+          "fin": "2025-05-12 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles \nS.Blaise  \nBc : Amphi BacoPnt : Télé-amphi 80 [Edt-Ens]",
+          "début": "2025-05-12 15:45",
+          "fin": "2025-05-12 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Economie et Ressources Naturelles \nS.Blaise  \nAte : A1 [Edt-Ens]",
+          "début": "2025-05-13 09:00",
+          "fin": "2025-05-13 10:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Macroéco 3",
+          "début": "2025-05-13 10:00",
+          "fin": "2025-05-13 12:00",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Economie et Finance Internationales - CC \nL.Roi A.Chung  \nBc : Amphi BacoAte : A10 [Edt-Ens]",
+          "début": "2025-05-14 08:00",
+          "fin": "2025-05-14 10:00",
+          "professeur": "L.Roi A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - PRESENTIEL BACO S20 \nL.Steffan  \nBc : Pect1 BacoAte : A4 [Edt-Ens]",
+          "début": "2025-05-14 15:45",
+          "fin": "2025-05-14 17:45",
+          "professeur": "L.Steffan"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - PRESENTIEL BACO S20\nSalle NOUVILLE : PECT BUC \nL.Steffan  \nBc : Salle 1 Baco [Edt-Ens]",
+          "début": "2025-05-15 10:15",
+          "fin": "2025-05-15 12:15",
+          "professeur": "Salle NOUVILLE : PECT BUC"
+        },
+        {
+          "nom_cours": "Cm : Introduction à la Finance Publique - PRESENTIEL BACO S20\nCC \nL.Steffan  \nBc : Salle 1 BacoAte : A1 [Edt-Ens]",
+          "début": "2025-05-16 10:15",
+          "fin": "2025-05-16 12:15",
+          "professeur": "CC"
+        }
+      ]
+    },
+    {
+      "semaine": 21,
+      "evenements": [
+        {
+          "nom_cours": "Td : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoAte : A10 [Edt-Ens]",
+          "début": "2025-05-19 07:45",
+          "fin": "2025-05-19 09:45",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 - CC2 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-05-19 13:30",
+          "fin": "2025-05-19 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Ressources Naturelles - CC \nS.Blaise  \nBc : Amphi BacoPnt : Télé-amphi 80 [Edt-Ens]",
+          "début": "2025-05-19 15:45",
+          "fin": "2025-05-19 17:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Techniques de Commerce International",
+          "début": "2025-05-20 07:45",
+          "fin": "2025-05-20 09:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques - CC \nS.Blaise  \nBc : Amphi BacoAte : A5 [Edt-Ens]",
+          "début": "2025-05-20 13:30",
+          "fin": "2025-05-20 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nAte : A7Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-05-23 07:45",
+          "fin": "2025-05-23 09:45",
+          "professeur": "L.Roi"
+        }
+      ]
+    },
+    {
+      "semaine": 22,
+      "evenements": [
+        {
+          "nom_cours": "Td : Economie et Finance Internationales \nL.Roi  \nAte : A7Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-05-26 08:00",
+          "fin": "2025-05-26 10:00",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoAte : A7 [Edt-Ens]",
+          "début": "2025-05-26 10:15",
+          "fin": "2025-05-26 12:15",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoAte : A7 [Edt-Ens]",
+          "début": "2025-05-27 08:00",
+          "fin": "2025-05-27 10:00",
+          "professeur": "L.Roi"
+        }
+      ]
+    },
+    {
+      "semaine": 23,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nAte : A10Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-06-02 07:45",
+          "fin": "2025-06-02 09:45",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Economie et Finance Internationales \nL.Roi  \nAte : A1Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-06-02 10:15",
+          "fin": "2025-06-02 12:15",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Macroéco 3 - CC3 \nS.Blaise  \nPnt : Télé-amphi 80Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-06-02 13:30",
+          "fin": "2025-06-02 15:30",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Cm : Techniques de Commerce International \nH.Auclair  \nAte : A1Bc : Amphi Baco [Edt-Ens]",
+          "début": "2025-06-03 10:00",
+          "fin": "2025-06-03 12:00",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Economie et Finance Internationales \nL.Roi  \nBc : Amphi BacoAte : A7 [Edt-Ens]",
+          "début": "2025-06-04 10:00",
+          "fin": "2025-06-04 12:00",
+          "professeur": "L.Roi"
+        },
+        {
+          "nom_cours": "Cm : Evaluation des Politiques Publiques - CC \nS.Blaise  \nBc : Amphi BacoAte : A2 [Edt-Ens]",
+          "début": "2025-06-05 07:45",
+          "fin": "2025-06-05 09:45",
+          "professeur": "S.Blaise"
+        },
+        {
+          "nom_cours": "Td : Economie et Finance Internationales - CC3\nSALLE 1 \nS.Blaise  \nAte : A7 [Edt-Ens]",
+          "début": "2025-06-05 10:00",
+          "fin": "2025-06-05 12:00",
+          "professeur": "SALLE 1"
+        },
+        {
+          "nom_cours": "Cm : Microéco 3",
+          "début": "2025-06-06 15:45",
+          "fin": "2025-06-06 17:45",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 26,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - COURS EN VISIO \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-06-23 07:45",
+          "fin": "2025-06-23 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L33info20 [Edt-Ens]",
+          "début": "2025-06-26 07:45",
+          "fin": "2025-06-26 09:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-06-26 13:30",
+          "fin": "2025-06-26 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L35info36 [Edt-Ens]",
+          "début": "2025-06-26 15:45",
+          "fin": "2025-06-26 17:45",
+          "professeur": "H.Auclair"
+        }
+      ]
+    },
+    {
+      "semaine": 27,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - EN AUONOMIE : FICHIER AUDIO SUR MOODLE \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-06-30 07:45",
+          "fin": "2025-06-30 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L35info36 [Edt-Ens]",
+          "début": "2025-07-03 10:00",
+          "fin": "2025-07-03 12:00",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 - LABO \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-03 15:45",
+          "fin": "2025-07-03 17:45",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 28,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - EN AUONOMIE : FICHIER AUDIO SUR MOODLE \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-07 07:45",
+          "fin": "2025-07-07 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-07 15:45",
+          "fin": "2025-07-07 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-08 07:45",
+          "fin": "2025-07-08 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-08 10:00",
+          "fin": "2025-07-08 12:00",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung  \nAte : A4 [Edt-Ens]",
+          "début": "2025-07-10 10:00",
+          "fin": "2025-07-10 12:00",
+          "professeur": "A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-10 13:30",
+          "fin": "2025-07-10 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-11 07:45",
+          "fin": "2025-07-11 09:45",
+          "professeur": "J.Gajewski"
+        }
+      ]
+    },
+    {
+      "semaine": 29,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-15 07:45",
+          "fin": "2025-07-15 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-15 10:00",
+          "fin": "2025-07-15 12:00",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-17 07:45",
+          "fin": "2025-07-17 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung   [Edt-Ens]",
+          "début": "2025-07-17 10:00",
+          "fin": "2025-07-17 12:00",
+          "professeur": "A.Chung   [Edt-Ens]"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-17 13:30",
+          "fin": "2025-07-17 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-17 15:45",
+          "fin": "2025-07-17 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-18 07:45",
+          "fin": "2025-07-18 09:45",
+          "professeur": "J.Gajewski"
+        }
+      ]
+    },
+    {
+      "semaine": 30,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - EN AUTONIMIE : AUDIO SUR MOODLE \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-21 07:45",
+          "fin": "2025-07-21 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-21 15:45",
+          "fin": "2025-07-21 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-22 07:45",
+          "fin": "2025-07-22 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-22 10:00",
+          "fin": "2025-07-22 12:00",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-24 07:45",
+          "fin": "2025-07-24 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung  \nAte : A4 [Edt-Ens]",
+          "début": "2025-07-24 10:00",
+          "fin": "2025-07-24 12:00",
+          "professeur": "A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-24 13:30",
+          "fin": "2025-07-24 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L35info36 [Edt-Ens]",
+          "début": "2025-07-24 15:45",
+          "fin": "2025-07-24 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-25 07:45",
+          "fin": "2025-07-25 09:45",
+          "professeur": "J.Gajewski"
+        }
+      ]
+    },
+    {
+      "semaine": 31,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - EN VISIO \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-28 07:45",
+          "fin": "2025-07-28 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-28 15:45",
+          "fin": "2025-07-28 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-29 07:45",
+          "fin": "2025-07-29 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-29 10:00",
+          "fin": "2025-07-29 12:00",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-07-31 07:45",
+          "fin": "2025-07-31 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung  \nAte : A4 [Edt-Ens]",
+          "début": "2025-07-31 10:00",
+          "fin": "2025-07-31 12:00",
+          "professeur": "A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-07-31 13:30",
+          "fin": "2025-07-31 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L35info36 [Edt-Ens]",
+          "début": "2025-07-31 15:45",
+          "fin": "2025-07-31 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-08-01 07:45",
+          "fin": "2025-08-01 09:45",
+          "professeur": "J.Gajewski"
+        }
+      ]
+    },
+    {
+      "semaine": 32,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - EN AUONOMIE : FICHIER AUDIO SUR MOODLE \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-08-04 07:45",
+          "fin": "2025-08-04 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-08-04 15:45",
+          "fin": "2025-08-04 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Finance de Marché \nJ.Gajewski  \nAte : A2 [Edt-Ens]",
+          "début": "2025-08-07 07:45",
+          "fin": "2025-08-07 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung  \nAte : A4 [Edt-Ens]",
+          "début": "2025-08-07 10:00",
+          "fin": "2025-08-07 12:00",
+          "professeur": "A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-08-07 13:30",
+          "fin": "2025-08-07 15:30",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A3 [Edt-Ens]",
+          "début": "2025-08-08 07:45",
+          "fin": "2025-08-08 09:45",
+          "professeur": "J.Gajewski"
+        },
+        {
+          "nom_cours": "Cm : Finance de Marché \nJ.Gajewski  \nAte : A3 [Edt-Ens]",
+          "début": "2025-08-08 10:00",
+          "fin": "2025-08-08 12:00",
+          "professeur": "J.Gajewski"
+        }
+      ]
+    },
+    {
+      "semaine": 33,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - COURS EN VISIO \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-08-11 07:45",
+          "fin": "2025-08-11 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-08-11 15:45",
+          "fin": "2025-08-11 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L35info36 [Edt-Ens]",
+          "début": "2025-08-12 10:00",
+          "fin": "2025-08-12 12:00",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-08-14 13:30",
+          "fin": "2025-08-14 15:30",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 34,
+      "evenements": [
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-18 07:00",
+          "fin": "2025-08-18 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-18 07:00",
+          "fin": "2025-08-18 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-19 07:00",
+          "fin": "2025-08-19 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-19 07:00",
+          "fin": "2025-08-19 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-20 07:00",
+          "fin": "2025-08-20 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-20 07:00",
+          "fin": "2025-08-20 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-21 07:00",
+          "fin": "2025-08-21 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-21 07:00",
+          "fin": "2025-08-21 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-22 07:00",
+          "fin": "2025-08-22 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-22 07:00",
+          "fin": "2025-08-22 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-23 07:00",
+          "fin": "2025-08-23 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-23 07:00",
+          "fin": "2025-08-23 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-24 07:00",
+          "fin": "2025-08-24 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-08-24 07:00",
+          "fin": "2025-08-24 20:00",
+          "professeur": "Inconnu"
+        }
+      ]
+    },
+    {
+      "semaine": 35,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - EN AUONOMIE : FICHIER AUDIO SUR MOODLE \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-08-25 07:45",
+          "fin": "2025-08-25 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-08-25 15:45",
+          "fin": "2025-08-25 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung  \nAte : A4 [Edt-Ens]",
+          "début": "2025-08-28 10:00",
+          "fin": "2025-08-28 12:00",
+          "professeur": "A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-08-28 13:30",
+          "fin": "2025-08-28 15:30",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 36,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - EN AUONOMIE : FICHIER AUDIO SUR MOODLE \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-09-01 07:45",
+          "fin": "2025-09-01 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L35info36 [Edt-Ens]",
+          "début": "2025-09-01 10:00",
+          "fin": "2025-09-01 12:00",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-09-01 15:45",
+          "fin": "2025-09-01 17:45",
+          "professeur": "G.Lagadec"
+        },
+        {
+          "nom_cours": "Td : Gestion de Projet Associé au Stage \nH.Auclair  \nLls : L35info36 [Edt-Ens]",
+          "début": "2025-09-02 15:45",
+          "fin": "2025-09-02 17:45",
+          "professeur": "H.Auclair"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung  \nAte : A4 [Edt-Ens]",
+          "début": "2025-09-04 10:00",
+          "fin": "2025-09-04 12:00",
+          "professeur": "A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-09-04 13:30",
+          "fin": "2025-09-04 15:30",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 37,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 - COURS EN VISIO \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-09-08 07:45",
+          "fin": "2025-09-08 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Td : Macroéco 4 \nA.Chung  \nAte : A4 [Edt-Ens]",
+          "début": "2025-09-11 10:00",
+          "fin": "2025-09-11 12:00",
+          "professeur": "A.Chung"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-09-11 13:30",
+          "fin": "2025-09-11 15:30",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 38,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-09-15 07:45",
+          "fin": "2025-09-15 09:45",
+          "professeur": "I.Lebon"
+        },
+        {
+          "nom_cours": "Cm : Microéco 4 \nG.Lagadec  \nAte : A7 [Edt-Ens]",
+          "début": "2025-09-18 13:30",
+          "fin": "2025-09-18 15:30",
+          "professeur": "G.Lagadec"
+        }
+      ]
+    },
+    {
+      "semaine": 39,
+      "evenements": [
+        {
+          "nom_cours": "Cm : Macroéco 4 \nI.Lebon  \nAte : A2 [Edt-Ens]",
+          "début": "2025-09-22 07:45",
+          "fin": "2025-09-22 09:45",
+          "professeur": "I.Lebon"
+        }
+      ]
+    },
+    {
+      "semaine": 42,
+      "evenements": [
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-13 07:00",
+          "fin": "2025-10-13 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-13 07:00",
+          "fin": "2025-10-13 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-14 07:00",
+          "fin": "2025-10-14 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-14 07:00",
+          "fin": "2025-10-14 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-15 07:00",
+          "fin": "2025-10-15 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-15 07:00",
+          "fin": "2025-10-15 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -     [Edt-Ens]",
+          "début": "2025-10-16 07:00",
+          "fin": "2025-10-16 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-16 07:00",
+          "fin": "2025-10-16 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-17 07:00",
+          "fin": "2025-10-17 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-17 07:00",
+          "fin": "2025-10-17 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-18 07:00",
+          "fin": "2025-10-18 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-18 07:00",
+          "fin": "2025-10-18 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-19 07:00",
+          "fin": "2025-10-19 20:00",
+          "professeur": "Inconnu"
+        },
+        {
+          "nom_cours": "Vacances universitaires  -  -  [Edt-Ens]",
+          "début": "2025-10-19 07:00",
+          "fin": "2025-10-19 20:00",
+          "professeur": "Inconnu"
+        }
+      ]
+    }
+  ],
+  "revisions": [
+    {
+      "nom_cours": "Révision Microéconomie",
+      "début": "2025-06-06 08:00",
+      "fin": "2025-06-06 10:00",
+      "description": "Session de révision pour le cours de microéconomie.",
+      "professeur": "IA Assistant",
+      "location": "",
+      "extendedProps": {
+        "type": "revision",
+        "added_by_ai": true,
+        "created_at": "2025-06-04T07:59:13.801938",
+        "color": "#10b981",
+        "textColor": "#ffffff"
+      }
+    }
+  ]
+}
